@@ -1,3 +1,4 @@
+#!/usr/bin/env
 import argparse, os
 from argparse import Namespace
 
@@ -14,10 +15,10 @@ if __name__ == "__main__":
     parser.add_argument('filename',metavar = 'f', type = argparse.FileType('r'), help = 'a file name')
     args: Namespace = parser.parse_args()
 
-    print("hello")
+    #print("hello")
     #print(args.accumulate(args.integers))
     if args.countbits:
-        file_size = os.stat(args.filename)
-        print(file_size)
+        file_size = os.path.getsize(args.filename.name)
+        print(file_size, args.filename.name)
    
     
